@@ -1,0 +1,9 @@
+{
+  "name": "Simple CPP project",
+  "description": "A simple C++ project with Unit tests.",
+  "commands": [
+    "git init",
+    "git add *",
+    "git commit -m \"Initial commit\""
+  ]
+}
