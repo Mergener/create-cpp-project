@@ -16,3 +16,8 @@ build
 builds
 bin
 obj
+
+# Ignore all templates but "simple"
+templates/*
+!templates/simple/
+!templates/simple/**
