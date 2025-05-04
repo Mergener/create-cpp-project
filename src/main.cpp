@@ -7,6 +7,8 @@
 int main() {
     namespace fs = std::filesystem;
 
+    std::cout << "Current dir: " << std::filesystem::current_path() << std::endl;
+
     // Load file templates.
     std::vector<std::unique_ptr<Template>> templates;
     load_templates_from(templates, TEMPLATES_PATH);
@@ -20,6 +22,7 @@ int main() {
 
     // Ask which template they want to use.
     std::vector<std::string> template_options;
+    template_options.reserve(templates.size());
     for (const auto& t: templates) {
         template_options.push_back(t->name());
     }

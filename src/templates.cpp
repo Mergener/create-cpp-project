@@ -68,6 +68,7 @@ void Template::generate(const fs::path& where,
 
         if (entry.is_regular_file()) {
             fs::path file_name = entry.path().filename();
+            fs::path dest_file_name = apply_substitutions(file_name.string(), project_name);
             fs::create_directories(dest_directory);
 
             fs::path src_file_path = src_directory / file_name;
@@ -76,7 +77,7 @@ void Template::generate(const fs::path& where,
                 continue;
             }
 
-            fs::path dest_file_path = dest_directory / file_name;
+            fs::path dest_file_path = dest_directory / dest_file_name;
 
             std::string content = read_entire_file(src_file_path);
             content = apply_substitutions(content, project_name);

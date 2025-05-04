@@ -1,9 +1,11 @@
 {
   "name": "Simple CPP project",
-  "description": "A simple C++ project with Unit tests.",
+  "description": "A simple C++ project that includes Doctest for unit testing.",
   "commands": [
     "git init",
     "git add *",
-    "git commit -m \"Initial commit\""
+    "git commit -m \"Initial commit\"",
+    "cmake -S . -B cmake-build-debug -DCMAKE_BUILD_TYPE=Debug",
+    "cmake -S . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release"
   ]
 }
