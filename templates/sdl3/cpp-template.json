@@ -1,0 +1,10 @@
+{
+  "name": "SDL3",
+  "description": "A basic SDL3 project that includes a sample main file.",
+  "commands": [
+    "git init",
+    "git add *",
+    "git commit -m \"Initial commit\"",
+    "git submodule add https://github.com/libsdl-org/SDL ext/sdl"
+  ]
+}

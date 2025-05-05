@@ -1,8 +1,3 @@
-# IDE generated
-.vscode
-.vs
-.idea
-
 # Binary files
 *.exe
 *.dll
