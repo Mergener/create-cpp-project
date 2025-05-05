@@ -1,6 +1,7 @@
 {
   "name": "Simple CPP project",
   "description": "A simple C++ project that includes Doctest for unit testing.",
+  "priority": 1000,
   "commands": [
     "git init",
     "git add *",

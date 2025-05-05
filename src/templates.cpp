@@ -9,6 +9,13 @@
 
 namespace fs = std::filesystem;
 
+void from_json(const nlohmann::json& j, TemplateInfo& template_info) {
+    template_info.name = j.at("name");
+    template_info.description = j.value("description", "");
+    template_info.commands = j.value("commands", std::vector<std::string>{});
+    template_info.priority = j.value("priority", 0);
+}
+
 std::string read_entire_file(const fs::path& path) {
     std::ifstream stream(path);
     stream.exceptions(std::ios_base::failbit | std::ios_base::badbit);
@@ -112,4 +119,8 @@ const std::string& Template::description() const {
 
 const fs::path& Template::path() const {
     return m_path;
+}
+
+int Template::priority() const {
+    return m_info.priority;
 }

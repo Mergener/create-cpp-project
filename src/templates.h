@@ -16,14 +16,16 @@ struct TemplateInfo {
     std::string name;
     std::string description;
     std::vector<std::string> commands;
+    int priority = 0;
 };
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TemplateInfo, name, description, commands);
+void from_json(const nlohmann::json& j, TemplateInfo& template_info);
 
 class Template {
 public:
     [[nodiscard]] const std::string& name() const;
     [[nodiscard]] const std::string& description() const;
     [[nodiscard]] const std::filesystem::path& path() const;
+    [[nodiscard]] int priority() const;
 
     void generate(const std::filesystem::path& where,
                   const std::string& project_name) const;

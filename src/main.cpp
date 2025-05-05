@@ -3,15 +3,17 @@
 
 #include <iostream>
 #include <filesystem>
+#include <algorithm>
 
 int main() {
     namespace fs = std::filesystem;
 
-    std::cout << "Current dir: " << std::filesystem::current_path() << std::endl;
-
     // Load file templates.
     std::vector<std::unique_ptr<Template>> templates;
     load_templates_from(templates, TEMPLATES_PATH);
+    std::sort(templates.begin(), templates.end(), [](const std::unique_ptr<Template>& a, const std::unique_ptr<Template>& b) {
+       return a->priority() > b->priority();
+    });
 
     // Ask for project name and location.
     auto project_name = ask_for<std::string>("Select a project name:");
