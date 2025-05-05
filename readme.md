@@ -62,8 +62,13 @@ be copied whenever you run `create-cpp-project` and selects your new template. B
 names and their contents:
 
 `ActualProjectName` -> Replaced with the Actual Project Name exactly matching the one defined on project creation
+
 `project-name` -> Replaced with the specified project name in dash-case
+
 `ProjectName` -> Replaced with the specified project name in PascalCase
+
 `projectName` -> Replaced with the specified project name in camelCase
+
 `project_name` -> Replaced with the specified project name in snake_case
+
 `PROJECT_NAME` -> Replaced with the specified project name in SCREAMING_SNAKE_CASE
